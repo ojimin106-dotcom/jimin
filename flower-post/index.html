@@ -563,12 +563,12 @@
           <rect x="0" y="270" width="400" height="30" fill="#E7D3CB"/>
           <ellipse cx="60" cy="262" rx="22" ry="12" fill="#6A9758"/><ellipse cx="370" cy="264" rx="18" ry="10" fill="#6A9758"/>
         </svg>
-        <span class="cap">매장 그림 · 가상 매장</span>
+        <span class="cap">매장 그림</span>
       </div>
       <div class="store-info">
-        <div class="si"><b>주소</b><span>서울 ○○구 꽃말길 14, 1층 <em>(가상 주소)</em></span></div>
+        <div class="si"><b>주소</b><span>경기도 안양시 동안구</span></div>
         <div class="si"><b>영업시간</b><span>화–일 11:00 – 20:00 · 월요일 휴무</span></div>
-        <div class="si"><b>오시는 길</b><span>○○역 2번 출구에서 걸어서 5분</span></div>
+        <div class="si"><b>오시는 길</b><span>자세한 위치는 픽업 예약 후 문자로 알려드려요</span></div>
         <div class="store-cards">
           <div><b>직접 보고 고르기</b><span>그날 들어온 꽃을 보고 꽃말 상담을 받으며 골라요.</span></div>
           <div><b>편지 쓰는 테이블</b><span>편지지와 펜이 준비돼 있어, 그 자리에서 쓰고 봉인해요.</span></div>
@@ -594,7 +594,7 @@
     <div>
       <div class="flogo"><img src="assets/logo-circle.png" alt="꽃말 우체국 마크"><b>꽃말 우체국 · FLOWER POST</b></div>
       <ul>
-        <li>매장: 서울 ○○구 꽃말길 14, 1층 (가상 주소) · 화–일 11:00–20:00</li>
+        <li>매장: 경기도 안양시 동안구 · 화–일 11:00–20:00</li>
         <li>본 페이지는 수업 과제로 만든 가상 채널이며, 실제 판매 정보가 아닙니다.</li>
         <li>로고는 AI(Claude), 사진은 AI(Gemini)로 만든 생성물입니다. 실존 인물·실제 로고는 사용하지 않았습니다.</li>
       </ul>
@@ -1293,7 +1293,7 @@ const PAYS = [
   {id:'easy',label:'간편결제',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2.5"/><path d="M10 18h4"/></svg>',info:'휴대폰에 등록된 간편결제로 비밀번호만 입력하면 결제돼요. (체험용 화면)'},
   {id:'bank',label:'계좌이체',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg>',info:'주문 후 안내되는 가상 계좌로 입금하면 결제가 완료돼요. (체험용 화면)'},
 ];
-const STORE={addr:'서울 ○○구 꽃말길 14, 1층', hours:'화–일 11:00 – 20:00 · 월요일 휴무'};
+const STORE={addr:'경기도 안양시 동안구', hours:'화–일 11:00 – 20:00 · 월요일 휴무'};
 const won = n => n.toLocaleString('ko-KR')+'원';
 const order = {seal:'wine', pay:'card', form:{}, letterMode:'text', file:null, ship:'parcel'};
 
@@ -1350,7 +1350,7 @@ function renderOrder(){
     <div class="blk"><h4>받는 방법 <small>모든 꽃다발은 매장에서 직접 만들어요</small></h4>
       <div class="ship3">${SHIPS.map(x=>`<button class="${order.ship===x.id?'on':''}" data-ship="${x.id}"><b>${x.label}</b>${x.sub}</button>`).join('')}</div>
       ${order.ship==='pickup' ? `
-      <div class="pickup-box"><b style="color:var(--wine)">꽃말 우체국 매장</b><br>${STORE.addr} (가상 주소)<br>${STORE.hours}</div>
+      <div class="pickup-box"><b style="color:var(--wine)">꽃말 우체국 매장</b><br>${STORE.addr}<br>자세한 위치는 예약 후 문자로 안내해요<br>${STORE.hours}</div>
       <div class="two">
         <div class="fld" id="f-sender"><label>주문하는 분 <em>*</em></label><input id="o-sender" value="${escapeAttr(f.sender||'')}" placeholder="이름"><span class="em">이름을 적어주세요</span></div>
         <div class="fld" id="f-receiver"><label>찾아가실 분 <em>*</em></label><input id="o-receiver" value="${escapeAttr(f.receiver||'')}" placeholder="이름"><span class="em">찾아가실 분 이름을 적어주세요</span></div>
