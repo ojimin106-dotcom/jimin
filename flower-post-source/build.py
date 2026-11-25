@@ -200,7 +200,6 @@ def page(fname, title, active, body, desc='말로 하기 쑥스러운 진심, �
         <ul>
           <li><a href="checkout.html">바로 주문하기</a></li>
           {''.join(f'<li><a href="product-{p["id"]}.html">{p["name"]}</a></li>' for p in PRODUCTS)}
-          <li><a href="bouquet-app.html">꽃다발 조합기</a></li>
           <li><a href="how.html#faq">자주 묻는 질문</a></li>
         </ul>
       </div>
@@ -390,10 +389,6 @@ def build():
 <section class="section white"><div class="wrap">
   <div class="section-head"><p class="eyebrow">BY FEELING</p><h2 class="h-section">마음별 추천 꽃 조합</h2><p class="lead">마음 이름을 누르면 그 조합으로 주문서가 열려요.</p></div>
   <div class="table-box"><table class="tbl"><thead><tr><th scope="col">마음</th><th scope="col">꽃</th><th scope="col">꽃말</th></tr></thead><tbody>{theme_rows}</tbody></table></div>
-</div></section>
-<section class="section"><div class="wrap">
-  <div class="banner"><div class="stack" style="gap:8px"><h2>꽃다발 조합기로 직접 골라 보기</h2><p>전하고 싶은 말과 상황을 적으면 꽃말 40종 중에서 어울리는 꽃다발 조합을 추천해 줘요.</p></div>
-  <a class="btn light lg" href="bouquet-app.html">조합기 열기</a></div>
 </div></section>'''
     pages.append(page('shop.html', '상품 · 꽃말 우체국', 'shop', body))
 
