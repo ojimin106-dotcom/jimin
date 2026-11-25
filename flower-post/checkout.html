@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>주문 · 결제 · 꽃말 우체국</title>
+<meta name="description" content="말로 하기 쑥스러운 진심, 꽃말에 담아 대신 전해드립니다.">
+<meta property="og:title" content="주문 · 결제 · 꽃말 우체국">
+<meta property="og:description" content="말로 하기 쑥스러운 진심, 꽃말에 담아 대신 전해드립니다.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="has-paybar">
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt=""><span>꽃말 우체국</span></a>
+    <nav class="nav" aria-label="주요 메뉴"><ul><li><a href="index.html">홈</a></li><li><a href="about.html">브랜드 이야기</a></li><li><a href="how.html">이용 안내</a></li><li><a href="shop.html">상품</a></li><li><a href="gift.html">선물 가이드</a></li><li><a href="flowers.html">꽃말 사전</a></li><li><a href="media.html">홍보 영상</a></li></ul></nav>
+    <div class="header-cta"><a class="btn sm" href="checkout.html" aria-current="page">주문하기</a></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-hero" style="padding-block:clamp(28px,4vw,44px)"><div class="wrap"><div class="stack" style="gap:8px">
+<p class="eyebrow">ORDER</p><h1>주문 · 결제</h1><p class="lead">한 페이지에서 고르고, 적고, 바로 결제해요.</p></div></div></section>
+<section class="section" style="padding-top:32px"><div class="wrap">
+<form id="order-form" class="checkout" novalidate>
+  <div class="panel">
+    <fieldset class="fs"><legend><span class="n">1</span>구성</legend>
+      <div class="opt-grid"><div class="opt"><input type="radio" name="product" id="p-letter" value="letter" checked>
+<label for="p-letter"><img src="assets/img/letter-flowers.svg" alt=""><span class="t"><b>편지 + 꽃 1~2송이</b><small>19,000원</small></span></label></div><div class="opt"><input type="radio" name="product" id="p-mini" value="mini">
+<label for="p-mini"><img src="assets/img/bouquet-friend.png" alt=""><span class="t"><b>편지 + 미니 꽃다발</b><small>35,000원</small></span></label></div><div class="opt"><input type="radio" name="product" id="p-bouquet" value="bouquet">
+<label for="p-bouquet"><img src="assets/img/bouquet-lover.png" alt=""><span class="t"><b>편지 + 꽃다발</b><small>52,000원</small></span></label></div></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span style="font-weight:700">수량</span>
+        <div class="qty"><button type="button" id="qty-dec" aria-label="수량 줄이기">−</button><output id="qty" aria-live="polite">1</output><button type="button" id="qty-inc" aria-label="수량 늘리기">+</button></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="fs"><legend><span class="n">2</span>담고 싶은 마음</legend>
+      <div class="chips"><span class="chip-radio"><input type="radio" name="theme" id="t-love" value="love" checked><label class="chip" for="t-love">사랑</label></span><span class="chip-radio"><input type="radio" name="theme" id="t-thanks" value="thanks"><label class="chip" for="t-thanks">감사</label></span><span class="chip-radio"><input type="radio" name="theme" id="t-sorry" value="sorry"><label class="chip" for="t-sorry">사과 · 진심</label></span><span class="chip-radio"><input type="radio" name="theme" id="t-cheer" value="cheer"><label class="chip" for="t-cheer">응원</label></span><span class="chip-radio"><input type="radio" name="theme" id="t-flutter" value="flutter"><label class="chip" for="t-flutter">설렘</label></span></div>
+      <div class="note" id="theme-note"></div>
+      <p class="pay-badge" id="flower-req" hidden></p>
+      <p style="font-weight:700;margin-top:6px">받는 사람</p>
+      <div class="chips"><span class="chip-radio"><input type="radio" name="to" id="r-lover" value="lover" checked><label class="chip" for="r-lover">연인</label></span><span class="chip-radio"><input type="radio" name="to" id="r-friend" value="friend"><label class="chip" for="r-friend">친구</label></span><span class="chip-radio"><input type="radio" name="to" id="r-family" value="family"><label class="chip" for="r-family">가족</label></span><span class="chip-radio"><input type="radio" name="to" id="r-teacher" value="teacher"><label class="chip" for="r-teacher">선생님</label></span><span class="chip-radio"><input type="radio" name="to" id="r-me" value="me"><label class="chip" for="r-me">나에게</label></span></div>
+    </fieldset>
+
+    <fieldset class="fs"><legend><span class="n">3</span>편지</legend>
+      <div class="opt-grid">
+        <div class="opt"><input type="radio" name="letterWay" id="lw-type" value="type" checked><label for="lw-type"><span class="t"><b>여기에 적기</b><small>편지지에 옮겨 동봉해요</small></span></label></div>
+        <div class="opt"><input type="radio" name="letterWay" id="lw-store" value="store"><label for="lw-store"><span class="t"><b>매장에 맡기기</b><small>안양 매장에 직접 가져와요</small></span></label></div>
+        <div class="opt"><input type="radio" name="letterWay" id="lw-mail" value="mail"><label for="lw-mail"><span class="t"><b>우편 보내기</b><small>주소는 주문 후 안내해요</small></span></label></div>
+      </div>
+      <div class="field" id="letter-field"><label for="letter">편지 내용 <span class="req">*</span></label>
+        <textarea id="letter" rows="5" maxlength="400" placeholder="예) 엄마, 늘 고맙다는 말을 못 했어요. 키워줘서 고마워요."></textarea>
+        <span class="hint" id="letter-count">0 / 400자</span></div>
+    </fieldset>
+
+    <fieldset class="fs"><legend><span class="n">4</span>받는 방법 · 정보</legend>
+      <div class="opt-grid c2">
+        <div class="opt"><input type="radio" name="receive" id="rv-ship" value="ship" checked><label for="rv-ship"><span class="t"><b>택배 배송</b><small>배송비 4,000원</small></span></label></div>
+        <div class="opt"><input type="radio" name="receive" id="rv-pickup" value="pickup"><label for="rv-pickup"><span class="t"><b>매장 픽업</b><small>경기도 안양시 동안구 · 무료</small></span></label></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="sname">주문하는 분 <span class="req">*</span></label><input id="sname" autocomplete="name"></div>
+        <div class="field"><label for="sphone">연락처 <span class="req">*</span></label><input id="sphone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000"></div>
+      </div>
+      <div id="ship-fields" class="stack" style="gap:14px">
+        <div class="row2">
+          <div class="field"><label for="rname">받는 분 <span class="req">*</span></label><input id="rname"></div>
+          <div class="field"><label for="rphone">받는 분 연락처 <span class="req">*</span></label><input id="rphone" type="tel" inputmode="numeric" placeholder="010-0000-0000"></div>
+        </div>
+        <div class="field"><label for="addr">배송 주소 <span class="req">*</span></label><input id="addr" autocomplete="street-address" placeholder="도로명 주소, 상세 주소"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="date" id="date-label">도착 희망일 <span class="req">*</span></label><input id="date" type="date"></div>
+        <div class="field"><label for="memo">요청 사항 (선택)</label><input id="memo" placeholder="예) 부재 시 문 앞에 놓아주세요"></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="fs"><legend><span class="n">5</span>결제</legend>
+      <div id="payment-method"></div>
+      <div id="agreement"></div>
+      <div id="demo-pay" hidden class="stack" style="gap:12px">
+        <p class="note">미리보기 화면에서는 토스페이먼츠 결제창을 불러올 수 없어 데모 결제로 진행돼요. GitHub Pages에 올리면 테스트 결제창이 열려요.</p>
+        <div class="demo-pay">
+          <span class="chip-radio"><input type="radio" name="demoPay" id="dp-card" value="신용·체크카드" checked><label class="chip" for="dp-card" style="width:100%;justify-content:center">신용·체크카드</label></span>
+          <span class="chip-radio"><input type="radio" name="demoPay" id="dp-toss" value="토스페이"><label class="chip" for="dp-toss" style="width:100%;justify-content:center">토스페이</label></span>
+          <span class="chip-radio"><input type="radio" name="demoPay" id="dp-kakao" value="카카오페이"><label class="chip" for="dp-kakao" style="width:100%;justify-content:center">카카오페이</label></span>
+          <span class="chip-radio"><input type="radio" name="demoPay" id="dp-bank" value="계좌이체"><label class="chip" for="dp-bank" style="width:100%;justify-content:center">계좌이체</label></span>
+        </div>
+      </div>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" id="agree" style="width:22px;height:22px;margin:3px 0 0;accent-color:#6B2C3B;flex:none"><span>생화 특성상 제작 시작 후에는 취소가 어려운 점을 확인했어요. (필수)</span></label>
+      <p class="alert" id="form-error" role="alert" hidden></p>
+    </fieldset>
+  </div>
+
+  <aside class="summary" aria-label="주문 요약">
+    <h2>주문 요약</h2>
+    <img id="sum-img" src="assets/img/letter-flowers.svg" alt="">
+    <div class="sum-row"><span>구성</span><span id="sum-product"></span></div>
+    <div class="sum-row"><span>꽃</span><span id="sum-flowers"></span></div>
+    <div class="sum-row"><span>받는 사람</span><span id="sum-to"></span></div>
+    <div class="sum-row"><span>받는 방법</span><span id="sum-receive"></span></div>
+    <div class="sum-row"><span>상품 금액</span><span id="sum-sub"></span></div>
+    <div class="sum-row"><span>배송비</span><span id="sum-ship"></span></div>
+    <div class="sum-total"><span style="font-weight:700">총 결제 금액</span><b id="sum-total"></b></div>
+    <button class="btn lg block pay-btn" type="submit">결제하기</button>
+    <p class="muted small">테스트 결제 환경이에요. 실제로 돈이 빠져나가지 않아요.</p>
+  </aside>
+  <div class="mobile-paybar"><span><span class="muted small">총 결제 금액</span><br><b id="bar-total"></b></span><button class="btn pay-btn" type="submit">결제하기</button></div>
+</form>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="stack" style="gap:12px">
+        <h2>꽃말 우체국 · FLOWER POST</h2>
+        <p>직접 쓴 편지와 꽃말을 담은 꽃을 함께 보내는 꽃집이에요.<br>매장: 경기도 안양시 동안구 · 택배 배송 및 매장 픽업</p>
+      </div>
+      <div>
+        <p class="footer-title">둘러보기</p>
+        <ul><li><a href="about.html">브랜드 이야기</a></li><li><a href="how.html">이용 안내</a></li><li><a href="shop.html">상품</a></li><li><a href="gift.html">선물 가이드</a></li><li><a href="flowers.html">꽃말 사전</a></li><li><a href="media.html">홍보 영상</a></li></ul>
+      </div>
+      <div>
+        <p class="footer-title">주문</p>
+        <ul>
+          <li><a href="checkout.html">바로 주문하기</a></li>
+          <li><a href="product-letter.html">편지 + 꽃 1~2송이</a></li><li><a href="product-mini.html">편지 + 미니 꽃다발</a></li><li><a href="product-bouquet.html">편지 + 꽃다발</a></li>
+          <li><a href="bouquet-app.html">꽃다발 조합기</a></li>
+          <li><a href="how.html#faq">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">수업 과제로 만든 가상 브랜드이며 실제 판매 정보가 아닙니다. 결제는 토스페이먼츠 테스트 환경으로, 실제로 돈이 빠져나가지 않습니다.<br>로고·이미지는 AI(Claude) 생성물입니다 · 꽃말 출처: 시대일보(2014.2.6 / 2014.10.2) 농식품부·농진청 ‘이달의 꽃’ 프리지아·리시안셔스, 그 외는 일반적으로 알려진 꽃말</p>
+  </div>
+</footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://js.tosspayments.com/v2/standard"></script><script src="assets/js/checkout.js"></script>
+</body>
+</html>
